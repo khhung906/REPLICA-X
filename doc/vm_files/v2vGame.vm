@@ -1,0 +1,4643 @@
+function v2vGame.new 0
+push constant 21
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+call Map.new 1
+pop this 2
+push argument 1
+call Random.new 1
+pop this 3
+push argument 0
+pop this 10
+push constant 0
+push constant 0
+push constant 32
+push constant 70
+push argument 0
+call Characters.new 5
+pop this 0
+push constant 480
+push constant 208
+push constant 32
+push constant 70
+push argument 0
+call Characters.new 5
+pop this 1
+push constant 0
+pop this 4
+push constant 0
+pop this 5
+push pointer 0
+push argument 0
+call v2vGame.map_generate 2
+pop temp 0
+push pointer 0
+return
+function v2vGame.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call Characters.dispose 1
+pop temp 0
+push this 1
+call Characters.dispose 1
+pop temp 0
+push this 2
+call Map.dispose 1
+pop temp 0
+push this 3
+call Random.dispose 1
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function v2vGame.map_generate 0
+push argument 0
+pop pointer 0
+push constant 10
+call Array.new 1
+pop this 18
+push constant 10
+call Array.new 1
+pop this 19
+push constant 10
+call Array.new 1
+pop this 20
+push argument 1
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 30
+call Array.new 1
+pop this 16
+push constant 30
+call Array.new 1
+pop this 17
+push constant 0
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 17
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 17
+add
+push constant 16
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 17
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 17
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 17
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 17
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 16
+add
+push constant 272
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 16
+add
+push constant 288
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 16
+add
+push constant 304
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 16
+add
+push constant 320
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 16
+add
+push constant 336
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 16
+add
+push constant 352
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 16
+add
+push constant 384
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 16
+add
+push constant 400
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 16
+add
+push constant 416
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 16
+add
+push constant 432
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 16
+add
+push constant 448
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push this 16
+add
+push constant 464
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push this 16
+add
+push constant 480
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push this 16
+add
+push constant 496
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 24
+push this 16
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 192
+pop this 9
+push constant 80
+pop this 8
+push constant 0
+push this 18
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 19
+add
+push constant 16
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 18
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 50
+call Array.new 1
+pop this 16
+push constant 50
+call Array.new 1
+pop this 17
+push constant 0
+push this 17
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 17
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 17
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 17
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 16
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 16
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 16
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 16
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 16
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 16
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 17
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 16
+add
+push constant 272
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 16
+add
+push constant 304
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 17
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 16
+add
+push constant 288
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 16
+add
+push constant 224
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 16
+add
+push constant 240
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 16
+add
+push constant 272
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push this 17
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push this 16
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push this 17
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push this 16
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push this 16
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 24
+push this 17
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 24
+push this 16
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 25
+push this 17
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 25
+push this 16
+add
+push constant 208
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 26
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 26
+push this 16
+add
+push constant 224
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 27
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 27
+push this 16
+add
+push constant 352
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 28
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 28
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 29
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 29
+push this 16
+add
+push constant 384
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 30
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 30
+push this 16
+add
+push constant 336
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 31
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 31
+push this 16
+add
+push constant 352
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 32
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 32
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 33
+push this 17
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 33
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 34
+push this 17
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 34
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 35
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 35
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 36
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 36
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 37
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 37
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 38
+push this 17
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 38
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 39
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 39
+push this 16
+add
+push constant 384
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 40
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 40
+push this 16
+add
+push constant 400
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 41
+push this 17
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 41
+push this 16
+add
+push constant 416
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 42
+push this 17
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 42
+push this 16
+add
+push constant 432
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 43
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 43
+push this 16
+add
+push constant 432
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 44
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 44
+push this 16
+add
+push constant 400
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 45
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 45
+push this 16
+add
+push constant 448
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 46
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 46
+push this 16
+add
+push constant 448
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 47
+push this 16
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 192
+pop this 9
+push constant 80
+pop this 8
+push constant 0
+push this 18
+add
+push constant 272
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 19
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 18
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 19
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 18
+add
+push constant 224
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 19
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 18
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 19
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 18
+add
+push constant 416
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 19
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 18
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE1
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 40
+call Array.new 1
+pop this 16
+push constant 40
+call Array.new 1
+pop this 17
+push constant 0
+push this 16
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 16
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 16
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 16
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 16
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 16
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 16
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 16
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 17
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 16
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 16
+add
+push constant 256
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 16
+add
+push constant 272
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 16
+add
+push constant 288
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 16
+add
+push constant 304
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 16
+add
+push constant 320
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 16
+add
+push constant 384
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 16
+add
+push constant 400
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 16
+add
+push constant 416
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 16
+add
+push constant 432
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 16
+add
+push constant 448
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 16
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push this 16
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 21
+push this 17
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push this 16
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 22
+push this 17
+add
+push constant 112
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push this 16
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 23
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 24
+push this 16
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 24
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 25
+push this 16
+add
+push constant 384
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 25
+push this 17
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 26
+push this 16
+add
+push constant 368
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 26
+push this 17
+add
+push constant 176
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 27
+push this 16
+add
+push constant 352
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 27
+push this 17
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 28
+push this 16
+add
+push constant 416
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 28
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 29
+push this 16
+add
+push constant 400
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 29
+push this 17
+add
+push constant 144
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 30
+push this 16
+add
+push constant 240
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 30
+push this 17
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 31
+push this 16
+add
+push constant 240
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 31
+push this 17
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 32
+push this 16
+add
+push constant 240
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 32
+push this 17
+add
+push constant 48
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 33
+push this 16
+add
+push constant 240
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 33
+push this 17
+add
+push constant 64
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 34
+push this 16
+add
+push constant 240
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 34
+push this 17
+add
+push constant 80
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 35
+push this 16
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 192
+pop this 9
+push constant 288
+pop this 8
+push constant 0
+push this 18
+add
+push constant 208
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 19
+add
+push constant 160
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 18
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 19
+add
+push constant 128
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 18
+add
+push constant 352
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 19
+add
+push constant 96
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 18
+add
+push constant 336
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 19
+add
+push constant 192
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 18
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 20
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE2
+push constant 0
+return
+function v2vGame.movePlayer 1
+push argument 0
+pop pointer 0
+push this 4
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+call Characters.moveUp 1
+pop local 0
+label IF_FALSE0
+push this 4
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 0
+call Characters.moveDown 1
+pop local 0
+label IF_FALSE1
+push this 4
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 0
+call Characters.moveLeft 1
+pop local 0
+label IF_FALSE2
+push this 4
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 0
+call Characters.moveRight 1
+pop local 0
+label IF_FALSE3
+push constant 0
+return
+function v2vGame.mComputer 1
+push argument 0
+pop pointer 0
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 1
+call Characters.moveUp 1
+pop local 0
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 1
+call Characters.moveDown 1
+pop local 0
+label IF_FALSE1
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 1
+call Characters.moveLeft 1
+pop local 0
+label IF_FALSE2
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 1
+call Characters.moveRight 1
+pop local 0
+label IF_FALSE3
+push constant 0
+return
+function v2vGame.moveComputer 11
+push argument 0
+pop pointer 0
+push constant 0
+pop local 10
+push constant 0
+pop local 7
+push constant 0
+pop local 3
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push constant 0
+pop local 2
+label WHILE_EXP0
+push local 7
+push this 18
+add
+pop pointer 1
+push that 0
+push constant 0
+gt
+not
+if-goto WHILE_END0
+push pointer 0
+push this 1
+call Characters.getx 1
+push constant 16
+sub
+push this 1
+call Characters.gety 1
+push constant 0
+call v2vGame.ontrap 4
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 0
+push constant 2000
+add
+pop local 0
+label IF_FALSE0
+push pointer 0
+push this 1
+call Characters.getx 1
+push this 1
+call Characters.gety 1
+push constant 16
+sub
+push constant 0
+call v2vGame.ontrap 4
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 2
+push constant 2000
+add
+pop local 2
+label IF_FALSE1
+push pointer 0
+push this 1
+call Characters.getx 1
+push constant 16
+add
+push this 1
+call Characters.gety 1
+push constant 0
+call v2vGame.ontrap 4
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push local 1
+push constant 2000
+add
+pop local 1
+label IF_FALSE2
+push pointer 0
+push this 1
+call Characters.getx 1
+push this 1
+call Characters.gety 1
+push constant 16
+add
+push constant 0
+call v2vGame.ontrap 4
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push local 3
+push constant 2000
+add
+pop local 3
+label IF_FALSE3
+push local 7
+push constant 1
+add
+pop local 7
+goto WHILE_EXP0
+label WHILE_END0
+push this 1
+call Characters.getx 1
+push this 0
+call Characters.getx 1
+sub
+pop local 8
+push this 1
+call Characters.gety 1
+push this 0
+call Characters.gety 1
+sub
+pop local 9
+push this 1
+call Characters.getatk_s 1
+push constant 1
+eq
+push this 11
+push this 11
+push constant 3
+call Math.divide 2
+push constant 3
+call Math.multiply 2
+sub
+push constant 0
+eq
+and
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push local 8
+call Math.abs 1
+push local 9
+call Math.abs 1
+add
+push constant 65
+lt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 1
+push this 1
+push this 0
+call Characters.skill1 3
+pop temp 0
+push pointer 0
+push this 1
+push this 0
+call v2vGame.skill1_attack 3
+pop temp 0
+push this 15
+push constant 1
+add
+pop this 15
+push constant 50
+call Sys.wait 1
+pop temp 0
+push constant 0
+return
+label IF_FALSE5
+label IF_FALSE4
+push this 14
+push constant 0
+eq
+push this 11
+push this 12
+sub
+push constant 1
+eq
+and
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 3
+call Random.rand 1
+pop this 13
+push pointer 0
+push this 13
+call v2vGame.mComputer 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE6
+push this 14
+push constant 0
+eq
+push this 11
+push this 12
+sub
+push constant 4
+lt
+and
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push pointer 0
+push this 13
+call v2vGame.mComputer 2
+pop temp 0
+push constant 0
+return
+label IF_FALSE7
+push local 8
+push constant 0
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push this 11
+push this 11
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 1
+call Characters.gety 1
+push this 0
+call Characters.gety 1
+gt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 1
+push this 1
+push this 0
+push constant 1
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 1
+push this 0
+push constant 1
+call v2vGame.attack 4
+pop temp 0
+goto IF_END10
+label IF_FALSE10
+push this 1
+push this 1
+push this 0
+push constant 2
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 1
+push this 0
+push constant 2
+call v2vGame.attack 4
+pop temp 0
+label IF_END10
+label IF_FALSE9
+push constant 0
+return
+label IF_FALSE8
+push local 9
+push constant 0
+eq
+push local 9
+push constant 16
+eq
+or
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 11
+push this 11
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 1
+call Characters.getx 1
+push this 0
+call Characters.getx 1
+gt
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 1
+push this 1
+push this 0
+push constant 3
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 1
+push this 0
+push constant 3
+call v2vGame.attack 4
+pop temp 0
+goto IF_END13
+label IF_FALSE13
+push this 1
+push this 1
+push this 0
+push constant 4
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 1
+push this 0
+push constant 4
+call v2vGame.attack 4
+pop temp 0
+label IF_END13
+label IF_FALSE12
+push constant 0
+return
+label IF_FALSE11
+push local 0
+push this 1
+call Characters.getx 1
+sub
+push this 0
+call Characters.getx 1
+add
+pop local 0
+push local 1
+push this 1
+call Characters.getx 1
+add
+push this 0
+call Characters.getx 1
+sub
+pop local 1
+push local 2
+push this 1
+call Characters.gety 1
+sub
+push this 0
+call Characters.gety 1
+add
+pop local 2
+push local 3
+push this 1
+call Characters.gety 1
+add
+push this 0
+call Characters.gety 1
+sub
+pop local 3
+push local 0
+push local 1
+call Math.min 2
+pop local 4
+push local 2
+push local 3
+call Math.min 2
+pop local 5
+push local 4
+push local 5
+call Math.min 2
+pop local 6
+push local 0
+push local 6
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 1
+call Characters.moveLeft 1
+pop this 14
+push constant 1
+pop local 10
+label IF_FALSE14
+push local 1
+push local 6
+eq
+push local 10
+push constant 0
+eq
+and
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push this 1
+call Characters.moveRight 1
+pop this 14
+push constant 1
+pop local 10
+label IF_FALSE15
+push local 3
+push local 6
+eq
+push local 10
+push constant 0
+eq
+and
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push this 1
+call Characters.moveDown 1
+pop this 14
+push constant 1
+pop local 10
+label IF_FALSE16
+push local 2
+push local 6
+eq
+push local 10
+push constant 0
+eq
+and
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+push this 1
+call Characters.moveUp 1
+pop this 14
+push constant 1
+pop local 10
+label IF_FALSE17
+push this 14
+push constant 0
+eq
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+push this 11
+pop this 12
+label IF_FALSE18
+push constant 0
+return
+function v2vGame.valid_attack 2
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push constant 1
+pop local 1
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+label WHILE_EXP0
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+push constant 0
+gt
+not
+if-goto WHILE_END0
+push local 0
+push this 17
+add
+pop pointer 1
+push that 0
+push argument 3
+lt
+push argument 5
+push local 0
+push this 17
+add
+pop pointer 1
+push that 0
+lt
+and
+push argument 2
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+eq
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop local 1
+label IF_FALSE1
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+label IF_FALSE0
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+label WHILE_EXP1
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+push constant 0
+gt
+not
+if-goto WHILE_END1
+push local 0
+push this 17
+add
+pop pointer 1
+push that 0
+push argument 3
+gt
+push argument 5
+push local 0
+push this 17
+add
+pop pointer 1
+push that 0
+gt
+and
+push argument 2
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+eq
+and
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 0
+pop local 1
+label IF_FALSE3
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
+label IF_FALSE2
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+label WHILE_EXP2
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+push constant 0
+gt
+not
+if-goto WHILE_END2
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+push argument 2
+lt
+push argument 4
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+lt
+and
+push argument 3
+push local 0
+push this 17
+add
+pop pointer 1
+push that 0
+eq
+and
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+pop local 1
+label IF_FALSE5
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP2
+label WHILE_END2
+label IF_FALSE4
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+label WHILE_EXP3
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+push constant 0
+gt
+not
+if-goto WHILE_END3
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+push argument 2
+gt
+push argument 4
+push local 0
+push this 16
+add
+pop pointer 1
+push that 0
+gt
+and
+push argument 3
+push local 0
+push this 17
+add
+pop pointer 1
+push that 0
+eq
+and
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 0
+pop local 1
+label IF_FALSE7
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP3
+label WHILE_END3
+label IF_FALSE6
+push local 1
+return
+function v2vGame.attack 5
+push argument 0
+pop pointer 0
+push argument 1
+call Characters.getx 1
+pop local 0
+push argument 1
+call Characters.gety 1
+pop local 1
+push argument 2
+call Characters.getx 1
+pop local 2
+push argument 2
+call Characters.gety 1
+pop local 3
+push argument 1
+call Characters.getsize 1
+pop local 4
+push local 0
+push local 2
+eq
+push local 0
+push local 2
+push constant 16
+add
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 3
+push constant 1
+eq
+push local 3
+push local 1
+lt
+and
+push pointer 0
+push argument 3
+push local 0
+push local 1
+push local 2
+push local 3
+push local 4
+call v2vGame.valid_attack 7
+push constant 1
+eq
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push argument 2
+push constant 0
+call Characters.m_health 2
+pop temp 0
+label IF_FALSE1
+push argument 3
+push constant 2
+eq
+push local 3
+push local 1
+gt
+and
+push pointer 0
+push argument 3
+push local 0
+push local 1
+push local 2
+push local 3
+push local 4
+call v2vGame.valid_attack 7
+push constant 1
+eq
+and
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push argument 2
+push constant 0
+call Characters.m_health 2
+pop temp 0
+label IF_FALSE2
+label IF_FALSE0
+push local 1
+push local 3
+eq
+push local 1
+push local 3
+push constant 16
+add
+eq
+or
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push argument 3
+push constant 3
+eq
+push local 2
+push local 0
+lt
+and
+push pointer 0
+push argument 3
+push local 0
+push local 1
+push local 2
+push local 3
+push local 4
+call v2vGame.valid_attack 7
+push constant 1
+eq
+and
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push argument 2
+push constant 0
+call Characters.m_health 2
+pop temp 0
+label IF_FALSE4
+push argument 3
+push constant 4
+eq
+push local 2
+push local 0
+gt
+and
+push pointer 0
+push argument 3
+push local 0
+push local 1
+push local 2
+push local 3
+push local 4
+call v2vGame.valid_attack 7
+push constant 1
+eq
+and
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push argument 2
+push constant 0
+call Characters.m_health 2
+pop temp 0
+label IF_FALSE5
+label IF_FALSE3
+push constant 0
+return
+function v2vGame.valid_skill1 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push argument 1
+push argument 3
+eq
+push argument 2
+push argument 4
+eq
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 1
+pop local 0
+label IF_FALSE0
+push argument 1
+push argument 3
+sub
+call Math.abs 1
+push constant 16
+eq
+push argument 2
+push argument 4
+eq
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 1
+pop local 0
+label IF_FALSE1
+push argument 1
+push argument 3
+sub
+call Math.abs 1
+push constant 32
+eq
+push argument 2
+push argument 4
+eq
+and
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 1
+pop local 0
+label IF_FALSE2
+push argument 1
+push argument 3
+sub
+call Math.abs 1
+push constant 48
+eq
+push argument 2
+push argument 4
+eq
+and
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 1
+pop local 0
+label IF_FALSE3
+push argument 1
+push argument 3
+eq
+push argument 2
+push argument 4
+sub
+call Math.abs 1
+push constant 16
+eq
+and
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 1
+pop local 0
+label IF_FALSE4
+push argument 1
+push argument 3
+eq
+push argument 2
+push argument 4
+sub
+call Math.abs 1
+push constant 32
+eq
+and
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 1
+pop local 0
+label IF_FALSE5
+push argument 1
+push argument 3
+eq
+push argument 2
+push argument 4
+sub
+call Math.abs 1
+push constant 48
+eq
+and
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push constant 1
+pop local 0
+label IF_FALSE6
+push argument 1
+push argument 3
+sub
+call Math.abs 1
+push constant 16
+eq
+push argument 2
+push argument 4
+sub
+call Math.abs 1
+push constant 16
+eq
+and
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 1
+pop local 0
+label IF_FALSE7
+push argument 1
+push argument 3
+sub
+call Math.abs 1
+push constant 32
+eq
+push argument 2
+push argument 4
+sub
+call Math.abs 1
+push constant 16
+eq
+and
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 1
+pop local 0
+label IF_FALSE8
+push argument 1
+push argument 3
+sub
+call Math.abs 1
+push constant 16
+eq
+push argument 2
+push argument 4
+sub
+call Math.abs 1
+push constant 32
+eq
+and
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push constant 1
+pop local 0
+label IF_FALSE9
+push local 0
+return
+function v2vGame.skill1_attack 4
+push argument 0
+pop pointer 0
+push argument 1
+call Characters.getx 1
+pop local 0
+push argument 1
+call Characters.gety 1
+pop local 1
+push argument 2
+call Characters.getx 1
+pop local 2
+push argument 2
+call Characters.gety 1
+pop local 3
+push pointer 0
+push local 0
+push local 1
+push local 2
+push local 3
+call v2vGame.valid_skill1 5
+push constant 1
+eq
+push pointer 0
+push local 0
+push local 1
+push local 2
+push constant 16
+add
+push local 3
+call v2vGame.valid_skill1 5
+push constant 1
+eq
+or
+push pointer 0
+push local 0
+push local 1
+push local 2
+push local 3
+push constant 16
+add
+call v2vGame.valid_skill1 5
+push constant 1
+eq
+or
+push pointer 0
+push local 0
+push local 1
+push local 2
+push constant 16
+add
+push local 3
+push constant 16
+add
+call v2vGame.valid_skill1 5
+push constant 1
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 2
+push constant 1
+call Characters.m_health 2
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function v2vGame.ontrap 1
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 18
+add
+pop pointer 1
+push that 0
+push constant 0
+gt
+not
+if-goto WHILE_END0
+push argument 1
+push local 0
+push this 18
+add
+pop pointer 1
+push that 0
+eq
+push argument 2
+push local 0
+push this 19
+add
+pop pointer 1
+push that 0
+eq
+and
+push local 0
+push this 20
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+and
+push argument 1
+push constant 16
+add
+push local 0
+push this 18
+add
+pop pointer 1
+push that 0
+eq
+push argument 2
+push local 0
+push this 19
+add
+pop pointer 1
+push that 0
+eq
+and
+push local 0
+push this 20
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+and
+or
+push argument 1
+push local 0
+push this 18
+add
+pop pointer 1
+push that 0
+eq
+push argument 2
+push constant 16
+add
+push local 0
+push this 19
+add
+pop pointer 1
+push that 0
+eq
+and
+push local 0
+push this 20
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+and
+or
+push argument 1
+push constant 16
+add
+push local 0
+push this 18
+add
+pop pointer 1
+push that 0
+eq
+push argument 2
+push constant 16
+add
+push local 0
+push this 19
+add
+pop pointer 1
+push that 0
+eq
+and
+push local 0
+push this 20
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+and
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 3
+push constant 1
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 0
+push this 20
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push this 2
+push local 0
+call Map.trap_u 2
+pop temp 0
+label IF_FALSE1
+push constant 1
+return
+label IF_FALSE0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function v2vGame.run 7
+push argument 0
+pop pointer 0
+push constant 0
+pop this 11
+push constant 0
+pop local 4
+push constant 0
+pop local 6
+push constant 0
+pop this 15
+push constant 0
+pop this 7
+push constant 22
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push constant 14
+call String.new 1
+push constant 112
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 72
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 22
+push constant 42
+call Output.moveCursor 2
+pop temp 0
+push constant 16
+call String.new 1
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 72
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+label WHILE_EXP0
+push local 4
+not
+not
+if-goto WHILE_END0
+push this 10
+push constant 0
+eq
+push this 11
+push this 11
+push constant 10
+call Math.divide 2
+push constant 10
+call Math.multiply 2
+sub
+push constant 0
+eq
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+push constant 35
+call Output.moveCursor 2
+pop temp 0
+push constant 23
+call String.new 1
+push constant 55
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 118
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 2
+push constant 35
+call Output.moveCursor 2
+pop temp 0
+push constant 18
+call String.new 1
+push constant 65
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 58
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 4
+push constant 35
+call Output.moveCursor 2
+pop temp 0
+push constant 26
+call String.new 1
+push constant 49
+call String.appendChar 2
+push constant 46
+call String.appendChar 2
+push constant 78
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 40
+call String.appendChar 2
+push constant 45
+call String.appendChar 2
+push constant 49
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 41
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 6
+push constant 35
+call Output.moveCursor 2
+pop temp 0
+push constant 25
+call String.new 1
+push constant 50
+call String.appendChar 2
+push constant 46
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 40
+call String.appendChar 2
+push constant 45
+call String.appendChar 2
+push constant 50
+call String.appendChar 2
+push constant 48
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 41
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 8
+push constant 35
+call Output.moveCursor 2
+pop temp 0
+push constant 28
+call String.new 1
+push constant 40
+call String.appendChar 2
+push constant 83
+call String.appendChar 2
+push constant 107
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 103
+call String.appendChar 2
+push constant 103
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 121
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 120
+call String.appendChar 2
+push constant 41
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push constant 10
+push constant 35
+call Output.moveCursor 2
+pop temp 0
+push constant 28
+call String.new 1
+push constant 83
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 119
+call String.appendChar 2
+push constant 105
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 108
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 98
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 116
+call String.appendChar 2
+push constant 104
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 109
+call String.appendChar 2
+push constant 97
+call String.appendChar 2
+push constant 112
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+label IF_FALSE0
+push pointer 0
+push this 0
+call Characters.getx 1
+push this 0
+call Characters.gety 1
+push constant 1
+call v2vGame.ontrap 4
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 0
+push constant 3
+call Characters.change_status 2
+pop temp 0
+push this 11
+pop local 1
+label IF_FALSE1
+push pointer 0
+push this 1
+call Characters.getx 1
+push this 1
+call Characters.gety 1
+push constant 1
+call v2vGame.ontrap 4
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 1
+push constant 3
+call Characters.change_status 2
+pop temp 0
+push this 11
+pop local 1
+label IF_FALSE2
+push this 7
+push constant 0
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 2
+call Map.create_box1 1
+pop temp 0
+label IF_FALSE3
+push this 7
+push constant 0
+eq
+push this 0
+call Characters.getx 1
+push this 8
+eq
+and
+push this 0
+call Characters.gety 1
+push this 9
+eq
+and
+push this 7
+push constant 0
+eq
+push this 0
+call Characters.getx 1
+push constant 16
+add
+push this 8
+eq
+and
+push this 0
+call Characters.gety 1
+push this 9
+eq
+and
+or
+push this 7
+push constant 0
+eq
+push this 0
+call Characters.getx 1
+push this 8
+eq
+and
+push this 0
+call Characters.gety 1
+push constant 16
+add
+push this 9
+eq
+and
+or
+push this 7
+push constant 0
+eq
+push this 0
+call Characters.getx 1
+push constant 16
+add
+push this 8
+eq
+and
+push this 0
+call Characters.gety 1
+push constant 16
+add
+push this 9
+eq
+and
+or
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 1
+pop this 7
+push this 0
+push constant 1
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE4
+push this 7
+push constant 0
+eq
+push this 1
+call Characters.getx 1
+push this 8
+eq
+and
+push this 1
+call Characters.gety 1
+push this 9
+eq
+and
+push this 7
+push constant 0
+eq
+push this 1
+call Characters.getx 1
+push constant 16
+add
+push this 8
+eq
+and
+push this 1
+call Characters.gety 1
+push this 9
+eq
+and
+or
+push this 7
+push constant 0
+eq
+push this 1
+call Characters.getx 1
+push this 8
+eq
+and
+push this 1
+call Characters.gety 1
+push constant 16
+add
+push this 9
+eq
+and
+or
+push this 7
+push constant 0
+eq
+push this 1
+call Characters.getx 1
+push constant 16
+add
+push this 8
+eq
+and
+push this 1
+call Characters.gety 1
+push constant 16
+add
+push this 9
+eq
+and
+or
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 1
+pop this 7
+push this 1
+push constant 1
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE5
+push this 11
+push this 11
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 2
+call Map.create 1
+pop temp 0
+label IF_FALSE6
+push this 2
+call Map.create_trap 1
+pop temp 0
+push constant 22
+push constant 14
+call Output.moveCursor 2
+pop temp 0
+push this 0
+call Characters.gethealth 1
+call Output.printInt 1
+pop temp 0
+push constant 22
+push constant 60
+call Output.moveCursor 2
+pop temp 0
+push this 1
+call Characters.gethealth 1
+call Output.printInt 1
+pop temp 0
+call Keyboard.keyPressed 0
+pop local 2
+push this 1
+call Characters.gethealth 1
+push constant 1
+lt
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push constant 0
+not
+pop local 4
+label IF_FALSE7
+push this 0
+call Characters.gethealth 1
+push constant 1
+lt
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push constant 1
+return
+label IF_FALSE8
+push this 1
+call Characters.getatk_s 1
+push constant 3
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push this 11
+push local 1
+sub
+push constant 20
+gt
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push this 1
+push constant 0
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE10
+label IF_FALSE9
+push this 1
+call Characters.getatk_s 1
+push constant 3
+lt
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 10
+push constant 0
+gt
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push pointer 0
+call v2vGame.moveComputer 1
+pop temp 0
+label IF_FALSE12
+push this 11
+push this 11
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push this 1
+push this 1
+call Characters.getx 1
+push this 1
+call Characters.gety 1
+push this 1
+call Characters.getmoves 1
+call Characters.draw_ch 4
+pop temp 0
+label IF_FALSE13
+label IF_FALSE11
+push this 0
+call Characters.getatk_s 1
+push constant 1
+eq
+push this 15
+push constant 3
+eq
+and
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push this 3
+push this 11
+call Random.c_seed 2
+pop temp 0
+push this 0
+push constant 0
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE14
+push this 1
+call Characters.getatk_s 1
+push constant 1
+eq
+push this 15
+push constant 3
+eq
+and
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push this 1
+push constant 0
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE15
+push this 0
+call Characters.getatk_s 1
+push constant 3
+eq
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push this 11
+push local 1
+sub
+push constant 20
+gt
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+push this 0
+push constant 0
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE17
+label IF_FALSE16
+push this 0
+call Characters.getatk_s 1
+push constant 3
+lt
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+push local 2
+push constant 82
+eq
+push local 6
+not
+and
+if-goto IF_TRUE19
+goto IF_FALSE19
+label IF_TRUE19
+push this 0
+push constant 2
+call Characters.change_status 2
+pop temp 0
+push constant 0
+not
+pop local 6
+push this 11
+pop local 0
+label IF_FALSE19
+push this 11
+push local 0
+sub
+push constant 80
+gt
+push this 0
+call Characters.getatk_s 1
+push constant 2
+eq
+and
+if-goto IF_TRUE20
+goto IF_FALSE20
+label IF_TRUE20
+push this 0
+push constant 0
+call Characters.change_status 2
+pop temp 0
+label IF_FALSE20
+push local 2
+push constant 131
+eq
+if-goto IF_TRUE21
+goto IF_FALSE21
+label IF_TRUE21
+push this 3
+push this 11
+call Random.c_seed 2
+pop temp 0
+push constant 1
+pop this 4
+label IF_FALSE21
+push local 2
+push constant 133
+eq
+if-goto IF_TRUE22
+goto IF_FALSE22
+label IF_TRUE22
+push constant 2
+pop this 4
+label IF_FALSE22
+push local 2
+push constant 130
+eq
+if-goto IF_TRUE23
+goto IF_FALSE23
+label IF_TRUE23
+push constant 3
+pop this 4
+label IF_FALSE23
+push local 2
+push constant 132
+eq
+if-goto IF_TRUE24
+goto IF_FALSE24
+label IF_TRUE24
+push constant 4
+pop this 4
+label IF_FALSE24
+push local 2
+push constant 87
+eq
+if-goto IF_TRUE25
+goto IF_FALSE25
+label IF_TRUE25
+push this 0
+push this 0
+push this 1
+push constant 1
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 0
+push this 1
+push constant 1
+call v2vGame.attack 4
+pop temp 0
+push constant 50
+call Sys.wait 1
+pop temp 0
+label IF_FALSE25
+push local 2
+push constant 83
+eq
+if-goto IF_TRUE26
+goto IF_FALSE26
+label IF_TRUE26
+push this 0
+push this 0
+push this 1
+push constant 2
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 0
+push this 1
+push constant 2
+call v2vGame.attack 4
+pop temp 0
+push constant 50
+call Sys.wait 1
+pop temp 0
+label IF_FALSE26
+push local 2
+push constant 65
+eq
+if-goto IF_TRUE27
+goto IF_FALSE27
+label IF_TRUE27
+push this 0
+push this 0
+push this 1
+push constant 3
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 0
+push this 1
+push constant 3
+call v2vGame.attack 4
+pop temp 0
+push constant 50
+call Sys.wait 1
+pop temp 0
+label IF_FALSE27
+push local 2
+push constant 68
+eq
+if-goto IF_TRUE28
+goto IF_FALSE28
+label IF_TRUE28
+push this 0
+push this 0
+push this 1
+push constant 4
+call Characters.boom 4
+pop temp 0
+push pointer 0
+push this 0
+push this 1
+push constant 4
+call v2vGame.attack 4
+pop temp 0
+push constant 50
+call Sys.wait 1
+pop temp 0
+label IF_FALSE28
+push local 2
+push constant 81
+eq
+push this 0
+call Characters.getatk_s 1
+push constant 1
+eq
+and
+if-goto IF_TRUE29
+goto IF_FALSE29
+label IF_TRUE29
+push this 0
+push this 0
+push this 1
+call Characters.skill1 3
+pop temp 0
+push pointer 0
+push this 0
+push this 1
+call v2vGame.skill1_attack 3
+pop temp 0
+push this 15
+push constant 1
+add
+pop this 15
+push constant 50
+call Sys.wait 1
+pop temp 0
+label IF_FALSE29
+push local 2
+push constant 131
+eq
+push local 2
+push constant 133
+eq
+or
+push local 2
+push constant 130
+eq
+or
+push local 2
+push constant 132
+eq
+or
+if-goto IF_TRUE30
+goto IF_FALSE30
+label IF_TRUE30
+push pointer 0
+call v2vGame.movePlayer 1
+pop temp 0
+label IF_FALSE30
+push this 11
+push this 11
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+if-goto IF_TRUE31
+goto IF_FALSE31
+label IF_TRUE31
+push this 0
+push this 0
+call Characters.getx 1
+push this 0
+call Characters.gety 1
+push this 0
+call Characters.getmoves 1
+call Characters.draw_ch 4
+pop temp 0
+label IF_FALSE31
+label IF_FALSE18
+push this 11
+push constant 1
+add
+pop this 11
+push constant 100
+call Sys.wait 1
+pop temp 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+pop local 5
+label WHILE_EXP1
+push local 5
+not
+not
+if-goto WHILE_END1
+push this 2
+call Map.create 1
+pop temp 0
+call Keyboard.keyPressed 0
+pop local 2
+push local 2
+push constant 131
+eq
+if-goto IF_TRUE32
+goto IF_FALSE32
+label IF_TRUE32
+push constant 1
+pop this 4
+label IF_FALSE32
+push local 2
+push constant 133
+eq
+if-goto IF_TRUE33
+goto IF_FALSE33
+label IF_TRUE33
+push constant 2
+pop this 4
+label IF_FALSE33
+push local 2
+push constant 130
+eq
+if-goto IF_TRUE34
+goto IF_FALSE34
+label IF_TRUE34
+push constant 3
+pop this 4
+label IF_FALSE34
+push local 2
+push constant 132
+eq
+if-goto IF_TRUE35
+goto IF_FALSE35
+label IF_TRUE35
+push constant 4
+pop this 4
+label IF_FALSE35
+push local 2
+push constant 131
+eq
+push local 2
+push constant 133
+eq
+or
+push local 2
+push constant 130
+eq
+or
+push local 2
+push constant 132
+eq
+or
+if-goto IF_TRUE36
+goto IF_FALSE36
+label IF_TRUE36
+push pointer 0
+call v2vGame.movePlayer 1
+pop temp 0
+label IF_FALSE36
+push this 11
+push this 11
+push constant 2
+call Math.divide 2
+push constant 2
+call Math.multiply 2
+sub
+push constant 0
+eq
+if-goto IF_TRUE37
+goto IF_FALSE37
+label IF_TRUE37
+push this 0
+push this 0
+call Characters.getx 1
+push this 0
+call Characters.gety 1
+push this 0
+call Characters.getmoves 1
+call Characters.draw_ch 4
+pop temp 0
+label IF_FALSE37
+push this 11
+push constant 1
+add
+pop this 11
+push this 0
+call Characters.getx 1
+push constant 480
+eq
+push this 0
+call Characters.gety 1
+push constant 208
+eq
+and
+if-goto IF_TRUE38
+goto IF_FALSE38
+label IF_TRUE38
+push constant 0
+return
+label IF_FALSE38
+push constant 100
+call Sys.wait 1
+pop temp 0
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+return

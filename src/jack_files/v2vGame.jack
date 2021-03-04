@@ -1,0 +1,679 @@
+class v2vGame {
+   field Characters player, computer;
+   field Map map;
+   field Random random;
+   field int pdirection, cdirection, boomdirection; // the square's current direction: // 0=none, 1=up, 2=down, 3=left, 4=right
+   field int box1get, box1_x, box1_y, m, t, r_start, randommove, p_move, s1_time;
+   field Array map_x, map_y, trap_x, trap_y, trap_use;
+
+   
+   /** Constructs a new Square Game. */
+   constructor v2vGame new(int mt, int seed) {
+      //x, y, size, health
+      let map = Map.new(mt);
+      let random = Random.new(seed);
+      let m = mt;
+      let player = Characters.new(0, 0, 32, 70, mt);
+      let computer = Characters.new(480, 208, 32, 70, mt);
+      let pdirection = 0;// initial state is no movement
+      let cdirection = 0;
+      do map_generate(mt);
+      return this;
+   }
+   
+   /** Disposes this game. */
+   method void dispose() {
+      do player.dispose();
+      do computer.dispose();
+      do map.dispose();
+      do random.dispose();
+      do Memory.deAlloc(this);
+      return;
+   }
+
+  method void map_generate(int i){
+      let trap_x = Array.new(10);
+      let trap_y = Array.new(10);
+      let trap_use = Array.new(10);
+      if(i = 0){
+         let map_x = Array.new(30);
+         let map_y = Array.new(30);
+         let map_x[0] = 256;
+         let map_y[0] = 0;
+         let map_x[1] = 256;
+         let map_y[1] = 16;
+         let map_x[2] = 256;
+         let map_y[2] = 32;
+         let map_x[3] = 256;
+         let map_y[3] = 48;
+         let map_x[4] = 256;
+         let map_y[4] = 64;
+         let map_x[5] = 256;
+         let map_y[5] = 80;
+         let map_x[6] = 256;
+         let map_y[6] = 96;
+         let map_x[7] = 256;
+         let map_y[7] = 112;
+         let map_x[8] = 256;
+         let map_y[8] = 128;
+         let map_x[9] = 272;
+         let map_y[9] = 128;
+         let map_x[10] = 288;
+         let map_y[10] = 128;
+         let map_x[11] = 304;
+         let map_y[11] = 128;
+         let map_x[12] = 320;
+         let map_y[12] = 128;
+         let map_x[13] = 336;
+         let map_y[13] = 128;
+         let map_x[14] = 352;
+         let map_y[14] = 128;
+         let map_x[15] = 368;
+         let map_y[15] = 128;
+         let map_x[16] = 384;
+         let map_y[16] = 128;
+         let map_x[17] = 400;
+         let map_y[17] = 128;
+         let map_x[18] = 416;
+         let map_y[18] = 128;
+         let map_x[19] = 432;
+         let map_y[19] = 128;
+         let map_x[20] = 448;
+         let map_y[20] = 128;
+         let map_x[21] = 464;
+         let map_y[21] = 128;
+         let map_x[22] = 480;
+         let map_y[22] = 128;
+         let map_x[23] = 496;
+         let map_y[23] = 128;
+         let map_x[24] = -1;
+         let box1_y = 192;
+         let box1_x = 80;
+         let trap_x[0] = 160;
+         let trap_y[0] = 16;
+         let trap_x[1] = -1;
+         let trap_use[0] = 0;
+         let trap_use[1] = 0;
+         let trap_use[2] = 0;
+         let trap_use[3] = 0;
+         let trap_use[4] = 0;
+      }
+      if(i = 1){
+         let map_x = Array.new(50);
+         let map_y = Array.new(50);
+         let map_y[0] = 96;
+         let map_x[0] = 80;
+         let map_y[1] = 112;
+         let map_x[1] = 80;
+         let map_y[2] = 32;
+         let map_x[2] = 80;
+         let map_y[3] = 48;
+         let map_x[3] = 80;
+         let map_y[4] = 64;
+         let map_x[4] = 80;
+         let map_y[5] = 80;
+         let map_x[5] = 80;
+         let map_y[6] = 160;
+         let map_x[6] = 64;
+         let map_y[7] = 160;
+         let map_x[7] = 80;
+         let map_y[8] = 160;
+         let map_x[8] = 96;
+         let map_y[9] = 160;
+         let map_x[9] = 112;
+         let map_y[10] = 160;
+         let map_x[10] = 128;
+         let map_y[11] = 160;
+         let map_x[11] = 144;
+         let map_y[12] = 160;
+         let map_x[12] = 160;
+         let map_y[13] = 48;
+         let map_x[13] = 272;
+         let map_y[14] = 32;
+         let map_x[14] = 256;
+         let map_y[15] = 80;
+         let map_x[15] = 304;
+         let map_y[16] = 64;
+         let map_x[16] = 288;
+         let map_y[17] = 192;
+         let map_x[17] = 224;
+         let map_y[18] = 192;
+         let map_x[18] = 240;
+         let map_y[19] = 192;
+         let map_x[19] = 256;
+         let map_y[20] = 192;
+         let map_x[20] = 272;
+         let map_y[21] = 48;
+         let map_x[21] = 144;
+         let map_y[22] = 64;
+         let map_x[22] = 160;
+         let map_y[23] = 80;
+         let map_x[23] = 176;
+         let map_y[24] = 96;
+         let map_x[24] = 192;
+         let map_y[25] = 112;
+         let map_x[25] = 208;
+         let map_y[26] = 128;
+         let map_x[26] = 224;
+         let map_y[27] = 32;
+         let map_x[27] = 352;
+         let map_y[28] = 32;
+         let map_x[28] = 368;
+         let map_y[29] = 32;
+         let map_x[29] = 384;
+         let map_y[30] = 144;
+         let map_x[30] = 336;
+         let map_y[31] = 144;
+         let map_x[31] = 352;
+         let map_y[32] = 192;
+         let map_x[32] = 368;
+         let map_y[33] = 96;
+         let map_x[33] = 368;
+         let map_y[34] = 112;
+         let map_x[34] = 368;
+         let map_y[35] = 128;
+         let map_x[35] = 368;
+         let map_y[36] = 144;
+         let map_x[36] = 368;
+         let map_y[37] = 160;
+         let map_x[37] = 368;
+         let map_y[38] = 176;
+         let map_x[38] = 368;
+         let map_y[39] = 144;
+         let map_x[39] = 384;
+         let map_y[40] = 144;
+         let map_x[40] = 400;
+         let map_y[41] = 48;
+         let map_x[41] = 416;
+         let map_y[42] = 64;
+         let map_x[42] = 432;
+         let map_y[43] = 80;
+         let map_x[43] = 432;
+         let map_y[44] = 32;
+         let map_x[44] = 400;
+         let map_y[45] = 128;
+         let map_x[45] = 448;
+         let map_y[46] = 144;
+         let map_x[46] = 448;        
+         let map_x[47] = -1;
+         let box1_y = 192;
+         let box1_x = 80;
+         let trap_x[0] = 272;
+         let trap_y[0] = 144;
+         let trap_x[1] = 176;
+         let trap_y[1] = 176;
+         let trap_x[2] = 224;
+         let trap_y[2] = 176;
+         let trap_x[3] = 144;
+         let trap_y[3] = 96;
+         let trap_x[4] = 416;
+         let trap_y[4] = 192;
+         let trap_x[5] = -1;
+         let trap_use[0] = 0;
+         let trap_use[1] = 0;
+         let trap_use[2] = 0;
+         let trap_use[3] = 0;
+         let trap_use[4] = 0;
+         let trap_use[5] = 0;
+      }
+      if(i = 2){
+         let map_x = Array.new(40);
+         let map_y = Array.new(40);
+         let map_x[0] = 96;
+         let map_y[0] = 32;
+         let map_x[1] = 32;
+         let map_y[1] = 32;
+         let map_x[2] = 48;
+         let map_y[2] = 32;
+         let map_x[3] = 64;
+         let map_y[3] = 32;
+         let map_x[4] = 80;
+         let map_y[4] = 32;
+         let map_x[5] = 48;
+         let map_y[5] = 128;
+         let map_x[6] = 48;
+         let map_y[6] = 144;
+         let map_x[7] = 48;
+         let map_y[7] = 160;
+         let map_x[8] = 48;
+         let map_y[8] = 176;
+         let map_x[9] = 48;
+         let map_y[9] = 192;
+         let map_x[10] = 256;
+         let map_y[10] = 128;
+         let map_x[11] = 272;
+         let map_y[11] = 128;
+         let map_x[12] = 288;
+         let map_y[12] = 128;
+         let map_x[13] = 304;
+         let map_y[13] = 128;
+         let map_x[14] = 320;
+         let map_y[14] = 128;
+         let map_x[15] = 384;
+         let map_y[15] = 80;
+         let map_x[16] = 400;
+         let map_y[16] = 80;
+         let map_x[17] = 416;
+         let map_y[17] = 80;
+         let map_x[18] = 432;
+         let map_y[18] = 80;
+         let map_x[19] = 448;
+         let map_y[19] = 80;
+         let map_x[20] = 80;
+         let map_y[20] = 80;
+         let map_x[21] = 96;
+         let map_y[21] = 96;
+         let map_x[22] = 112;
+         let map_y[22] = 112;
+         let map_x[23] = 128;
+         let map_y[23] = 128;
+         let map_x[24] = 144;
+         let map_y[24] = 144;
+         let map_x[25] = 384;
+         let map_y[25] = 160;
+         let map_x[26] = 368;
+         let map_y[26] = 176;
+         let map_x[27] = 352;
+         let map_y[27] = 192;
+         let map_x[28] = 416;
+         let map_y[28] = 128;
+         let map_x[29] = 400;
+         let map_y[29] = 144;
+         let map_x[30] = 240;
+         let map_y[30] = 128;
+         let map_x[31] = 240;
+         let map_y[31] = 32;
+         let map_x[32] = 240;
+         let map_y[32] = 48;
+         let map_x[33] = 240;
+         let map_y[33] = 64;
+         let map_x[34] = 240;
+         let map_y[34] = 80;
+         let map_x[35] = -1;
+         let box1_y = 192;
+         let box1_x = 288;
+         let trap_x[0] = 208;
+         let trap_y[0] = 160;
+         let trap_x[1] = 32;
+         let trap_y[1] = 128;
+         let trap_x[2] = 352;
+         let trap_y[2] = 96;
+         let trap_x[3] = 336;
+         let trap_y[3] = 192;
+         let trap_x[4] = -1;
+         let trap_use[0] = 0;
+         let trap_use[1] = 0;
+         let trap_use[2] = 0;
+         let trap_use[3] = 0;
+         let trap_use[4] = 0;
+         let trap_use[5] = 0;
+      }
+      return;
+   }
+
+   /** Moves the square in the current direction. */
+   method void movePlayer() {
+      var int p_move;
+      if (pdirection = 1) { let p_move = player.moveUp(); }
+      if (pdirection = 2) { let p_move = player.moveDown(); }
+      if (pdirection = 3) { let p_move = player.moveLeft(); }
+      if (pdirection = 4) { let p_move = player.moveRight(); }
+      return;
+   }
+
+   method void mComputer(int p){
+      var int p_move;
+      if (p = 1) { let p_move = computer.moveUp(); }
+      if (p = 2) { let p_move = computer.moveDown(); }
+      if (p = 3) { let p_move = computer.moveLeft(); }
+      if (p = 4) { let p_move = computer.moveRight(); }
+      return;
+   }
+
+   method void moveComputer(){
+      //movecomputer
+      var int lossl, lossr, lossu, lossd, m1, m2, minloss, d, delta_x, delta_y, has_move;
+      let has_move = 0;
+      let d = 0;
+      let lossd = 0;
+      let lossl = 0;
+      let lossr = 0;
+      let lossu = 0;
+      
+      while(trap_x[d] > 0){
+         if(ontrap(computer.getx()-16, computer.gety(), 0)){
+            let lossl = lossl+2000;
+         }
+         if(ontrap(computer.getx(), computer.gety()-16, 0)){
+            let lossu = lossu+2000;
+         }
+         if(ontrap(computer.getx()+16, computer.gety(), 0)){
+            let lossr = lossr+2000;
+         }
+         if(ontrap(computer.getx(), computer.gety()+16, 0)){
+            let lossd = lossd+2000;
+         }
+         let d = d+1;
+      }
+
+      let delta_x = computer.getx()-player.getx();
+      let delta_y = computer.gety()-player.gety();
+      if((computer.getatk_s() = 1) & ((t - ((t/3)*3)) = 0)){
+         if(Math.abs(delta_x)+Math.abs(delta_y) < 65){
+            do computer.skill1(computer, player);
+            do skill1_attack(computer, player);
+            let s1_time = s1_time+1;
+            do Sys.wait(50);
+            return;
+         }
+      }
+      if((p_move = 0) & ((t-r_start) = 1)){
+         let randommove = random.rand();
+         do mComputer(randommove);
+         return;
+      }
+      if((p_move = 0) & ((t-r_start) < 4)){
+         do mComputer(randommove);
+         return;
+      }
+
+      if(delta_x = 0){
+         if((t - ((t/2)*2)) = 0){
+            if(computer.gety() > player.gety()){
+               do computer.boom(computer, player, 1); 
+               do attack(computer, player, 1);
+            }
+            else{
+               do computer.boom(computer, player, 2); 
+               do attack(computer, player, 2);
+            }
+         }
+         return;
+      }
+
+      if((delta_y = 0)|(delta_y = 16)){
+         if((t - ((t/2)*2)) = 0){
+            if(computer.getx() > player.getx()){
+               do computer.boom(computer, player, 3); 
+               do attack(computer, player, 3);
+            }
+            else{
+               do computer.boom(computer, player, 4); 
+               do attack(computer, player, 4);
+            }
+         }
+         return;
+      }
+
+      // let lossl = lossl+computer.getx()-player.getx();
+      // let lossr = lossr-computer.getx()+player.getx();
+      // let lossu = lossu+computer.gety()-player.gety();
+      // let lossd = lossd-computer.gety()+player.gety();
+      // make computer get close with player
+      let lossl = lossl-computer.getx()+player.getx();
+      let lossr = lossr+computer.getx()-player.getx();
+      let lossu = lossu-computer.gety()+player.gety();
+      let lossd = lossd+computer.gety()-player.gety();
+      // make computer get close to box
+      // if(box1get = 0){
+      //    let lossl = lossl-2*(computer.getx()+box1_x);
+      //    let lossr = lossr+2*(computer.getx()-box1_x);
+      //    let lossu = lossu-2*(computer.gety()+box1_y);
+      //    let lossd = lossd+2*(computer.gety()-box1_y);
+      // }
+      // do Output.moveCursor(0,35);
+      // do Output.printInt(lossr);
+      let m1 = Math.min(lossl, lossr);
+      let m2 = Math.min(lossu, lossd);
+      let minloss = Math.min(m1, m2);
+      if (lossl = minloss){let p_move = computer.moveLeft(); let has_move = 1;}
+      if ((lossr = minloss)&(has_move = 0)){let p_move = computer.moveRight(); let has_move = 1;}
+      if ((lossd = minloss)&(has_move = 0)){let p_move = computer.moveDown(); let has_move = 1;}
+      if ((lossu = minloss)&(has_move = 0)){let p_move = computer.moveUp(); let has_move = 1;}
+      if (p_move = 0){let r_start = t;}
+      return;
+   }
+
+   method int valid_attack(int dir, int a_x, int a_y, int d_x, int d_y, int size){
+      var int detect, flag;
+      let detect = 0;
+      let flag = 1;
+      if (dir = 1){
+         while((map_x[detect]) > 0){
+            if(((map_y[detect]) < a_y) & (d_y < (map_y[detect])) & (a_x = map_x[detect])) {let flag = 0;}
+            let detect = detect + 1;
+         }
+      }
+      if (dir = 2){
+         while((map_x[detect]) > 0){
+            if(((map_y[detect]) > a_y) & (d_y > (map_y[detect])) & (a_x = map_x[detect])) {let flag = 0;}
+            let detect = detect + 1;
+         }
+      }
+      if (dir = 3){
+         while((map_x[detect]) > 0){
+            if(((map_x[detect]) < a_x) & (d_x < (map_x[detect])) & (a_y = map_y[detect])) {let flag = 0;}
+            let detect = detect + 1;
+         }
+      }
+      if (dir = 4){
+         while((map_x[detect]) > 0){
+            if(((map_x[detect]) > a_x) & (d_x > (map_x[detect])) & (a_y = map_y[detect])) {let flag = 0;}
+            let detect = detect + 1;
+         }
+      }
+      return flag;
+   }
+   method void attack(Characters attacker, Characters defenser, int dir){
+      var int a_x, a_y, d_x, d_y, size;
+      let a_x = attacker.getx();
+      let a_y = attacker.gety();
+      let d_x = defenser.getx();
+      let d_y = defenser.gety();
+      let size = attacker.getsize();
+      // 1 up 2 down 3 left 4 right
+      if((a_x = d_x) | (a_x = (d_x+16))){
+         if((dir = 1) & (d_y < a_y) & ((valid_attack(dir, a_x, a_y, d_x, d_y, size) = 1))){
+            do defenser.m_health(0);
+            }
+         if((dir = 2) & (d_y > a_y) & ((valid_attack(dir, a_x, a_y, d_x, d_y, size) = 1))){
+            do defenser.m_health(0);
+            }
+      }
+      if((a_y = d_y) | (a_y = (d_y+16))){
+         if((dir = 3) & (d_x < a_x) & ((valid_attack(dir, a_x, a_y, d_x, d_y, size) = 1))){
+            do defenser.m_health(0);
+            }
+         if((dir = 4) & (d_x > a_x) & ((valid_attack(dir, a_x, a_y, d_x, d_y, size) = 1))){
+            do defenser.m_health(0);
+            }
+      }
+      return;
+   }
+
+
+   method int valid_skill1(int a_x, int a_y, int d_x, int d_y){
+      var int flag;
+      let flag = 0;
+      if((a_x = d_x) & (a_y = d_y)){let flag = 1;}
+      if((Math.abs(a_x-d_x) = 16) & (a_y = d_y)){let flag = 1;}
+      if((Math.abs(a_x-d_x) = 32) & (a_y = d_y)){let flag = 1;}
+      if((Math.abs(a_x-d_x) = 48) & (a_y = d_y)){let flag = 1;}
+      if((a_x = d_x) & (Math.abs(a_y-d_y) = 16)){let flag = 1;}
+      if((a_x = d_x) & (Math.abs(a_y-d_y) = 32)){let flag = 1;}
+      if((a_x = d_x) & (Math.abs(a_y-d_y) = 48)){let flag = 1;}
+      if((Math.abs(a_x-d_x) = 16) & (Math.abs(a_y-d_y) = 16)){let flag = 1;}
+      if((Math.abs(a_x-d_x) = 32) & (Math.abs(a_y-d_y) = 16)){let flag = 1;}
+      if((Math.abs(a_x-d_x) = 16) & (Math.abs(a_y-d_y) = 32)){let flag = 1;}
+      return flag;
+   }
+
+   method void skill1_attack(Characters attacker, Characters defenser){
+      var int a_x, a_y, d_x, d_y;
+      let a_x = attacker.getx();
+      let a_y = attacker.gety();
+      let d_x = defenser.getx();
+      let d_y = defenser.gety();
+      if((valid_skill1(a_x, a_y, d_x, d_y) = 1) | (valid_skill1(a_x, a_y, d_x+16, d_y) = 1) | (valid_skill1(a_x, a_y, d_x, d_y+16) = 1) | (valid_skill1(a_x, a_y, d_x+16, d_y+16) = 1)){
+         do defenser.m_health(1);
+      }
+      return;
+   }
+
+   method int ontrap(int x, int y, int m){
+      var int d;
+      let d = 0;
+      while(trap_x[d] > 0){
+         if(((x = trap_x[d]) & (y = trap_y[d]) & (trap_use[d] = 0)) | ((x+16 = trap_x[d]) & (y = trap_y[d]) & (trap_use[d] = 0)) | ((x = trap_x[d]) & (y+16 = trap_y[d]) & (trap_use[d] = 0)) | ((x+16 = trap_x[d]) & (y+16 = trap_y[d]) & (trap_use[d] = 0))){
+            if(m = 1){
+               let trap_use[d] = 1;
+               do map.trap_u(d);}
+            return 1;
+         }
+         let d = d+1;
+      }
+      return 0;
+   }
+
+   /** Runs the game: handles the user's inputs and moves the square accordingly */
+   method int run() {
+      var int  s2start, trap_time;
+      var char key;  // the key currently pressed by the user
+      var char prevkey;
+      var boolean exit, door, s2open;
+      let t = 0;
+      let exit = false;
+      let s2open = false;
+      let s1_time = 0;
+      let box1get = 0;
+      do Output.moveCursor(22,0);
+      do Output.printString("player Health:");
+      do Output.moveCursor(22,42);
+      do Output.printString("computer Health:");
+      while (~exit) {
+         if(m = 0 & ((t - ((t/10)*10)) = 0)){
+            do Output.moveCursor(0,35);
+            do Output.printString("70 blood in every level");
+            do Output.moveCursor(2,35);
+            do Output.printString("Attack your enemy:");
+            do Output.moveCursor(4,35);
+            do Output.printString("1.Normal attack(-10 blood)");
+            do Output.moveCursor(6,35);
+            do Output.printString("2.Skill attack(-20 blood)");
+            do Output.moveCursor(8,35);
+            do Output.printString("(Skill triggered by the box)");
+            do Output.moveCursor(10,35);
+            do Output.printString("Some trap will be on the map");
+         }
+         // do Output.moveCursor(22,0);
+         // do Output.printString("player Health:");
+         // do Output.moveCursor(22,42);
+         // do Output.printString("computer Health:");
+         if(ontrap(player.getx(), player.gety(), 1)) {
+            do player.change_status(3);
+            let trap_time = t;
+         }
+
+         if(ontrap(computer.getx(), computer.gety(), 1)) {
+            do computer.change_status(3);
+            let trap_time = t;
+         }
+
+         if((box1get = 0)){
+            do map.create_box1();
+         }
+         if(((box1get = 0) & (player.getx() =  box1_x) & (player.gety() = box1_y))|((box1get = 0) & (player.getx()+16 =  box1_x) & (player.gety() = box1_y))|((box1get = 0) & (player.getx() =  box1_x) & (player.gety()+16 = box1_y))|((box1get = 0) & (player.getx()+16 =  box1_x) & (player.gety()+16 = box1_y))){
+            let box1get = 1;
+            do player.change_status(1);
+         }
+
+         if(((box1get = 0) & (computer.getx() =  box1_x) & (computer.gety() = box1_y))|((box1get = 0) & (computer.getx()+16 =  box1_x) & (computer.gety() = box1_y))|((box1get = 0) & (computer.getx() =  box1_x) & (computer.gety()+16 = box1_y))|((box1get = 0) & (computer.getx()+16 =  box1_x) & (computer.gety()+16 = box1_y))){
+            let box1get = 1;
+            do computer.change_status(1);
+         }
+
+         if((t - ((t/2)*2)) = 0){do map.create();}
+         do map.create_trap();
+         // print health
+         do Output.moveCursor(22,14);
+         do Output.printInt(player.gethealth());
+         do Output.moveCursor(22,60);
+         do Output.printInt(computer.gethealth());
+         // waits for a key to be pressed
+
+         
+         let key = Keyboard.keyPressed();
+
+         //do moveComputer();
+
+         if (computer.gethealth() < 1)  {let exit = true;}     // q key
+         if (player.gethealth() < 1)  { return 1;}
+
+
+         if(computer.getatk_s() = 3){ 
+            if((t-trap_time) > 20){ do computer.change_status(0);}
+         }
+         if((computer.getatk_s() < 3)){
+            if(m > 0){do moveComputer();}
+            if((t - ((t/2)*2)) = 0){do computer.draw_ch(computer.getx(), computer.gety(), computer.getmoves());}
+         }
+         if((player.getatk_s() = 1) & (s1_time = 3)){
+            do random.c_seed(t);
+            do player.change_status(0);
+         }
+
+         if((computer.getatk_s() = 1) & (s1_time = 3)){
+            do computer.change_status(0);
+         }
+
+         if(player.getatk_s() = 3){ 
+            if((t-trap_time) > 20){do player.change_status(0);}
+         }
+         if(player.getatk_s() < 3){
+            if((key = 82) & (~s2open)) {
+               do player.change_status(2);
+               let s2open = true;
+               let s2start = t;
+            }
+
+            if(((t - s2start) > 80) & (player.getatk_s() = 2)){
+               do player.change_status(0);
+
+            }
+            if (key = 131) { do random.c_seed(t); let pdirection = 1;}   // up arrow
+            if (key = 133) { let pdirection = 2;}   // down arrow
+            if (key = 130) { let pdirection = 3;}   // left arrow
+            if (key = 132) { let pdirection = 4;}   // right arrow
+
+            if (key = 87) {do player.boom(player, computer, 1); do attack(player, computer, 1);do Sys.wait(50);}   // w key
+            if (key = 83) {do player.boom(player, computer, 2); do attack(player, computer, 2);do Sys.wait(50);}   // s key
+            if (key = 65) {do player.boom(player, computer, 3); do attack(player, computer, 3);do Sys.wait(50);}   // a key
+            if (key = 68) {do player.boom(player, computer, 4); do attack(player, computer, 4);do Sys.wait(50);}   // d key
+            if ((key = 81) & (player.getatk_s() = 1)) {do player.skill1(player, computer); do skill1_attack(player, computer); let s1_time = s1_time+1; do Sys.wait(50);}//q key
+
+            if ((key = 131)|(key = 133)|(key = 130)|(key = 132)){do movePlayer();}
+            if((t - ((t/2)*2)) = 0){do player.draw_ch(player.getx(), player.gety(), player.getmoves());}
+         }
+         let t = t+1;
+         do Sys.wait(100);
+      } // while
+
+      let door = false;
+      while (~door) {
+         do map.create();
+         // waits for a key to be pressed
+         let key = Keyboard.keyPressed();
+         if (key = 131) { let pdirection = 1;}   // up arrow
+         if (key = 133) { let pdirection = 2;}   // down arrow
+         if (key = 130) { let pdirection = 3;}   // left arrow
+         if (key = 132) { let pdirection = 4;}   // right arrow
+
+         if ((key = 131)|(key = 133)|(key = 130)|(key = 132)){do movePlayer();}
+         if((t - ((t/2)*2)) = 0){do player.draw_ch(player.getx(), player.gety(), player.getmoves());}
+         let t = t+1;
+         if((player.getx() = 480) & (player.gety() = 208)){return 0;}
+         do Sys.wait(100);
+      }
+   return 0;
+   }
+}

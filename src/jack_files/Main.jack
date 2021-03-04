@@ -1,0 +1,13 @@
+class Main {
+    function void main() {
+        var Table table;
+        var int t;
+        let t = 0;
+        while(t = 0){
+            let table = Table.new();
+            let t = table.run();
+            do table.dispose();
+        }
+        return;
+    }
+}

@@ -1,0 +1,25 @@
+class Random {
+    field int seed;
+    
+    constructor Random new(int newSeed) {
+        let seed = newSeed;
+        return this;
+    }
+    method void c_seed(int c){
+        let seed = seed + c;
+        return;
+    }
+    method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+    method int rand() {
+        /** return a random number in the range 0..32767 */
+        let seed = seed + 20251;
+        if (seed < 0) {
+            let seed = seed - 32767 - 1;
+        }
+        return (seed/8192)+1;
+    }
+}
